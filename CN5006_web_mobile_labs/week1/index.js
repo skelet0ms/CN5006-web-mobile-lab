@@ -14,7 +14,7 @@ console.log('The sum of ' + num1 + ' and ' + num2 + ' is: ' + sum);
 const prompt = require('prompt-sync')(); // required line
 console.log("starting")
 const name = prompt("Enter your name: ");
-console.log("Hello, ${name}");
+console.log(`Hello, ${name}`);
 // checks if number from user is positive, negative or zero
 const number = parseInt(prompt("Enter a number: "));
 
