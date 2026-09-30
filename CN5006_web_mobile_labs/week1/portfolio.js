@@ -4,44 +4,49 @@ The task: to get two or more numbers and perform basic arithmetic operations (ad
 
 const prompt = require('prompt-sync')(); // required line
 
+// Gets numbers for operation
+const num1 = parseInt(prompt("Enter your first number: "));
+const num2 = parseInt(prompt("Enter your second number: "));
 
+// Gets the operation from the user
+let operation = prompt("Enter your operation (+, -, /, x): ");
+// Validates user's input
+while (!["+","-","/","x"].includes(operation))
 {
-    // Gets numbers for operation
-    const num1 = parseInt(prompt("Enter your first number: "));
-    const num2 = parseFloat(prompt("Enter your second number: "));
+    console.log("Please try again.");
+    operation = prompt("Enter your operation (+, -, /, x): ");
+}
+// Checks to see what operation the user wants and does said operation
+// Starting with addition
+if (operation == "+")
+{
+    let sum = num1 + num2;
+    console.log(num1 + " + " + num2 + " = " + sum);
+}
+// Then subtraction
+else if (operation == "-")
+{
+    let sum = num1 - num2;
+    console.log(num1 + " - " + num2 + " = " + sum);
+}
+// Then division
+else if (operation == "/")
+{
+    let sum = num1 / num2;
+    console.log(num1 + " / " + num2 + " = " + sum);
+}
+// Lastly multiplication
+else
+{
+    let sum = num1 * num2;
+    console.log(num1 + " x " + num2 + " = " + sum);
+}
 
-    // Gets the operation from the user
-    let operation = prompt("Enter your operation (+, -, /, x): ");
-    // Validates user's input
-    while (!["+","-","/","x"].includes(operation))
-    {
-        console.log("Please try again.");
-        operation = prompt("Enter your operation (+, -, /, x): ");
-    }
-    // Checks to see what operation the user wants and does said operation
-    // Starting with addition
-    if (operation == "+")
-    {
-        let sum = num1 + num2;
-        console.log(num1 + " + " + num2 + " = " + sum);
-    }
-    // Then subtraction
-    else if (operation == "-")
-    {
-        let sum = num1 - num2;
-        console.log(num1 + " - " + num2 + " = " + sum);
-    }
-    // Then division
-    else if (operation == "/")
-    {
-        let sum = num1 / num2;
-        console.log(num1 + " / " + num2 + " = " + sum);
-    }
-    // Lastly multiplication
-    else
-    {
-        let sum = num1 * num2;
-        console.log(num1 + " x " + num2 + " = " + sum);
-    }
-
+// Asks if user wants to continue
+let shouldContinue = prompt("Continue (y/n)?")
+// Validition for continuation
+while (shouldContinue != "y" && shouldContinue != "n")
+{
+    console.log("Please enter y or n")
+    shouldContinue = prompt("Continue (y/n)?")
 }
