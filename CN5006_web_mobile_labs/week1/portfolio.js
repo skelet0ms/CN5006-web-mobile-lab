@@ -47,6 +47,21 @@ let shouldContinue = prompt("Continue (y/n)?")
 // Validition for continuation
 while (shouldContinue != "y" && shouldContinue != "n")
 {
-    console.log("Please enter y or n")
-    shouldContinue = prompt("Continue (y/n)?")
+    console.log("Please enter y or n");
+    shouldContinue = prompt("Continue (y/n)? ");
+}
+
+// Continue for next numbers
+while (shouldContinue == "y")
+{
+    // Get new number from user
+    let num = parseInt(prompt("Enter a new number: "));
+    // Gets the operation from the user
+    let operation = prompt("Enter your operation (+, -, /, x): ");
+    // Validates user's input
+    while (!["+","-","/","x"].includes(operation))
+    {
+        console.log("Please try again.");
+        operation = prompt("Enter your operation (+, -, /, x): ");
+    }
 }
