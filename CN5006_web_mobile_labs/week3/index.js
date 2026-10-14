@@ -26,3 +26,21 @@ const EmpSkills = (skills, name, labGrp)=>
 }
 
 EmpSkills("java", "2715772", "4")
+
+/*
+THIRD EXERCISE
+*/
+const student = require("./studentInfo.js")
+const Person = require("./person.js")
+
+//display info for the student
+console.log("Student Name: " + student.getName())
+console.log(student.location())
+console.log(student.dob) 
+//display info for the student's grade
+console.log(student.StudentGrade)
+console.log("grade is " + student.StudentGrade(55))
+// making a person and displaying the info
+const person1 = new Person("Dave", "UK", "email@example.com")
+console.log("using Person module ", person1.getPersonInfo())
+console.log("Program finished")

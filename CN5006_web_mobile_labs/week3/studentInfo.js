@@ -16,7 +16,7 @@ exports.location = getCampusName
 exports.dob = dateOfBirth
 
 //exporting functions with parameters 
-exports.StundentGrade = (marks) =>
+exports.StudentGrade = (marks) =>
 {
     if (marks > 50 && marks < 70) return ("B grade")
     else

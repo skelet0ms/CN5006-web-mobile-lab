@@ -9,12 +9,11 @@ class Person
 
     getPersonInfo()
     {
-        return
-        {
-            Name; this.name,
-            Age; this.age,
-            Email; this.email
-        }
+        return {
+            Name: this.name,
+            Age: this.age,
+            Email: this.email
+        };
     }
 }
 
