@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const MONGO_URL = "mongodb+srv://tombland_db_user:<db_password>@cluster0.hxaj8jv.mongodb.net/";
 
 const PersonSchema = new mongoose.Schema(
@@ -23,7 +25,8 @@ async function insertOne() {
     const doc1 = new Person ({
         name: 'NHQ',
         age: 32,
-        geb
+        gender: 'Male',
+        salary: 1234
     });
 
     const savedDoc = await doc1.save();
