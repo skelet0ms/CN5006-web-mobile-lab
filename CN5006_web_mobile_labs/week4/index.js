@@ -11,7 +11,7 @@ const PersonSchema = new mongoose.Schema(
         },
         age: Number,
         gender: String,
-        salary: Number
+        salary: Number,
     }
 );
 
@@ -26,7 +26,7 @@ async function insertOne() {
         name: 'NHQ',
         age: 32,
         gender: 'Male',
-        salary: 1234
+        salary: 1234,
     });
 
     const savedDoc = await doc1.save();
@@ -118,12 +118,12 @@ async function main()
         console.log('Connected to ${MONGO_URL}');
 
         await insertOne();
-        await insertMany();
+       /* await insertMany();
         await findAll();
         await findFemalesOver30();
         await countDocuments();
         await deleteManyPersons();
-        await updateManyPersons();
+        await updateManyPersons(); */
     }
 
     catch (err)
