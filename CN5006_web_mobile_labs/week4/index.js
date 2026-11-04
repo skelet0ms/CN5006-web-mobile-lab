@@ -65,6 +65,23 @@ async function findAll()
     });
 }
 
+// find females over the age of 30
+async function findFemalesOver30() 
+{
+    const age = 30;
+    const docs = await Person.find({
+        gender:'Female',
+        age:{$gte:age}
+    })
+    .sort({salary:1}) //sort by ascending salary
+    .select('name salary age')
+    .limit(10);
+    console.log('Females aged ${age} or above: ');
+    docs.forEach(doc =>{
+            console.log(doc.age, doc.name, doc.salary);
+        });
+}
+
 // connect to mongodb
 async function main() 
 {
@@ -76,6 +93,7 @@ async function main()
         await insertOne();
         await insertMany();
         await findAll();
+        await findFemalesOver30();
     }
 
     catch (err)
