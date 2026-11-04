@@ -50,6 +50,21 @@ async function insertMany()
     console.log(result);
 }
 
+// find all documents
+async function findAll()
+{
+    const docs = await Person.find({})
+    .sort({salary:1}) //sort by ascending salary
+    .select('name salary age')
+    .limit(100);
+    
+    console.log('Showing multiple documents')
+
+    docs.forEach(doc=> {
+        console.log(doc.age, doc.name, doc.salary);
+    });
+}
+
 // connect to mongodb
 async function main() 
 {
@@ -60,6 +75,7 @@ async function main()
 
         await insertOne();
         await insertMany();
+        await findAll();
     }
 
     catch (err)
