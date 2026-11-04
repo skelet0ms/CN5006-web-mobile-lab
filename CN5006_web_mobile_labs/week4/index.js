@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = {
-     insertOne,
+    insertOne,
     insertMany,
     findAll,
     findFemalesOver30,
