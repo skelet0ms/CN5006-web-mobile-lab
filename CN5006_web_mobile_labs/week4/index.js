@@ -82,6 +82,13 @@ async function findFemalesOver30()
         });
 }
 
+// count all documents
+async function countDocuments()
+{
+    const count = await Person.countDocuments();
+    console.log('Total documents count: ',count);
+}
+
 // connect to mongodb
 async function main() 
 {
@@ -94,6 +101,7 @@ async function main()
         await insertMany();
         await findAll();
         await findFemalesOver30();
+        await countDocuments();
     }
 
     catch (err)
