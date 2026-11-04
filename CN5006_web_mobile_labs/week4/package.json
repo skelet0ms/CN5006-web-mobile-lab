@@ -12,5 +12,6 @@
   "type": "commonjs",
   "dependencies": {
     "mongoose": "^9.11.2"
-  }
+  },
+  "devDependencies": {}
 }
