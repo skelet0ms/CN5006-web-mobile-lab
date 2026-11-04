@@ -89,6 +89,15 @@ async function countDocuments()
     console.log('Total documents count: ',count);
 }
 
+// delete all documents where age is more than 25
+async function deleteManyPersons() 
+{
+    const result = await Person.deleteMany({
+        age:{$gte:25}
+    });
+    console.log('Deleted documents: ', result);
+}
+
 // connect to mongodb
 async function main() 
 {
@@ -102,6 +111,7 @@ async function main()
         await findAll();
         await findFemalesOver30();
         await countDocuments();
+        await deleteManyPersons();
     }
 
     catch (err)
