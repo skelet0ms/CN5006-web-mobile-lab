@@ -1,5 +1,15 @@
 const mongoose = require('mongoose');
 
+module.exports = {
+     insertOne,
+    insertMany,
+    findAll,
+    findFemalesOver30,
+    countDocuments,
+    deleteManyPersons,
+    updateManyPersons
+};
+
 const MONGO_URL = "mongodb+srv://tombland_db_user:dJNI02ifWjc5undX@cluster0.hxaj8jv.mongodb.net/";
 
 const PersonSchema = new mongoose.Schema(

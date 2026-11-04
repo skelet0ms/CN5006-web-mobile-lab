@@ -23,7 +23,7 @@ app.get('/users/:userId/books/:bookId', function (req, res) {
 });
 
 app.get('/GetStudents', (req, res) => {
-    fs.readFile('./Students.json', 'utf8', (err, data) => {
+    fs.readFile('./Student.json', 'utf8', (err, data) => {
 
         if (err) {
             return res.status(500).json({
@@ -48,7 +48,7 @@ app.get('/GetStudent/:id', (req, res) => {
 
     console.log("GetStudent called");
 
-    fs.readFile(__dirname + "/Students.json", "utf8", (err, data) => {
+    fs.readFile(__dirname + "/Student.json", "utf8", (err, data) => {
 
         if (err) {
             return res.status(500).json({
