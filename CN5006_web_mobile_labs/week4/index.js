@@ -118,12 +118,12 @@ async function main()
         console.log('Connected to ${MONGO_URL}');
 
         await insertOne();
-       /* await insertMany();
+       await insertMany();
         await findAll();
         await findFemalesOver30();
         await countDocuments();
         await deleteManyPersons();
-        await updateManyPersons(); */
+        await updateManyPersons();
     }
 
     catch (err)

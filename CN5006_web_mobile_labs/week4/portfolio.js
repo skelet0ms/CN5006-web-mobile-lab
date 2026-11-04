@@ -39,7 +39,7 @@ async function insertMany()
     const manypersons = [
     { name: 'SimonNHQ', age: 42, gender: 'Male', salary: 3456, city: 'Cambridge'},
     { name: 'NeeshaNN', age: 53, gender: 'Female', salary: 1000, city: 'York' },
-    { name: 'MaryNHQ', age: 27, gender: 'Female', salary: 5402, city: 'Manchester'},
+    { name: 'MaryNHQ', age: 27, gender: 'Female', salary: 5402, city: 'Brentwood'},
     { name: 'MikeNJQ', age: 40, gender: 'Male', salary: 4519, city: 'Brentwood'}
     ];
 
@@ -47,6 +47,11 @@ async function insertMany()
 
     console.log('Many documents inserted.');
     console.log(result);
+}
+// find everyone from brentwood
+async function findBrentwood()
+{
+
 }
 
 // connect to mongodb
