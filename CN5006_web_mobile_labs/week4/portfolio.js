@@ -51,7 +51,15 @@ async function insertMany()
 // find everyone from brentwood
 async function findBrentwood()
 {
-
+    const docs = await Person.find({
+        city:'Brentwood'
+    })
+    .sort({salary:1})
+    .limit(5);
+    console.log('People from Brentwood: ');
+    docs.forEach(doc=>{
+        console.log(doc.age, doc.name, doc.gender, doc.salary, doc.city)
+    });
 }
 
 // connect to mongodb
@@ -64,6 +72,7 @@ async function main()
 
         await insertOne();
         await insertMany();
+        await findBrentwood();
     }
 
     catch (err)
