@@ -89,13 +89,24 @@ async function countDocuments()
     console.log('Total documents count: ',count);
 }
 
-// delete all documents where age is more than 25
+// delete all documents where age is more than 45
 async function deleteManyPersons() 
 {
     const result = await Person.deleteMany({
-        age:{$gte:25}
+        age:{$gte:45}
     });
     console.log('Deleted documents: ', result);
+}
+
+// update all female salary to 5555
+async function updateManyPersons()
+{
+    const result = await Person.updateMany(
+        {gender:"Female"},
+        {salary:5555}
+    );
+    console.log("Update successful");
+    console.log(result);
 }
 
 // connect to mongodb
@@ -112,6 +123,7 @@ async function main()
         await findFemalesOver30();
         await countDocuments();
         await deleteManyPersons();
+        await updateManyPersons();
     }
 
     catch (err)
