@@ -38,7 +38,7 @@ async function insertOne(name, age, gender, salary) {
 // Function to insert many documents
 async function insertMany() {
 
-    const manypersons = [
+        const manypersons = [
         { name: 'SimonNHQ', age: 42, gender: 'Male', salary: 3456 },
         { name: 'NeeshaNN', age: 53, gender: 'Female', salary: 1000 },
         { name: 'MaryNHQ', age: 27, gender: 'Female', salary: 5402 },

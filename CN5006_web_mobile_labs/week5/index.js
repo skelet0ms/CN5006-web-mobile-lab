@@ -111,7 +111,8 @@ const {
     countDocuments,
     findFemalesOver30,
     deleteManyPersons,
-    updateManyPersons
+    updateManyPersons,
+    insertMany
 } = require('./Week4lab');
 
 const MONGO_URI = "mongodb+srv://tombland_db_user:dJNI02ifWjc5undX@cluster0.hxaj8jv.mongodb.net/";
@@ -165,6 +166,27 @@ app.get('/persons', async (req, res) => {
    
 });
 
+app.get('/count', async (req, res) =>{
+    try {
+        console.log('calling count documents')
+        const result = await countDocuments();
+        res.json(result);
+        console.log("result")
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+app.get('/femalesOver30', async (req, res)=> {
+    try {
+        console.log('calling females over 30')
+        const result = await findFemalesOver30();
+        res.json(result);
+        console.log("result")
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
